@@ -9,6 +9,9 @@ Written with Pug and Stylus. Used Babel to handle js conversions.
  * Requires JS to run major animations
  * Fallbacks gracefully when no JS is present
 
+# See it live
+http://aozidesu.com/resume/
+
 # Usage
 
 ### Before starting:
