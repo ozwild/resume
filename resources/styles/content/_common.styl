@@ -27,7 +27,13 @@ ul
 
 li
   margin-bottom 0.75em
-    
+
+  
+figure
+  @media (max-width: 960px)
+    margin 0
+  
+  
 figcaption
   font-size 0.9em
   font-style italic
@@ -137,6 +143,7 @@ figcaption
   box-sizing border-box
   display flex
   flex-direction row
+  flex-wrap wrap
   .column
     flex 1
   &.padded
@@ -146,6 +153,12 @@ figcaption
   &.open
     .column
       margin 0 0.5em
+  @media (max-width: 640px)
+    flex-direction column
+    &.open
+      .column
+        margin 0.5em 0
+    
     
 .rows
   box-sizing border-box
