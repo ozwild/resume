@@ -38,7 +38,6 @@ I know this might be troublesome but the whole idea is to get some hands-on prac
  
  Aaand... there it is. Your very own resume project fresh out of the oven.
  You could alternatively just modify the contents of the index.html file provided but where's the fun in that?
- To modify the js
  
 
 # Notes
