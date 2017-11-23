@@ -1,4 +1,5 @@
 require("./content/Velocity")
+require("./content/Loop")
 
 import Nav from "./content/NavClass";
 import Notes from "./content/ContentNotesClass";

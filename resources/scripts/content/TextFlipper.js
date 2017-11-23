@@ -25,13 +25,23 @@ export default class TextFlipper{
   
   start(){
     let self = this;
-    this.interval = setInterval(function(){
-      self.flip();
-    },self.flipInterval);
+    
+    animLoop(function( deltaT, now ) {
+
+        if(self.interval == null || (now - self.interval) >= self.flipInterval){
+          self.interval = now;
+          self.flip();
+        }
+
+        if(self.interval == null){
+          return false;
+        }
+
+      });
+    
   }
   
   stop(){
-    clearInterval(this.interval);
     this.interval = null;
   }
   

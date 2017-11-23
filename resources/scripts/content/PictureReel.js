@@ -10,7 +10,7 @@ export default class PictureReel extends Eventful{
     this.data = [];
 
     this.interval = null;
-    
+
     this.sourcePrefix = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1357379/";
 
     this.pictures = [
@@ -33,20 +33,26 @@ export default class PictureReel extends Eventful{
     let self = this;
 
     if(this.interval == null){
-      
-      this.interval = setInterval(function(){
 
-        self.reel();
+      animLoop(function( deltaT, now ) {
 
-      },8000);
-      this.reel();
-      
+        if(self.interval == null || (now - self.interval) >= 8000){
+          self.interval = now;
+          self.reel();
+        }
+
+        if(self.interval == null){
+          return false;
+        }
+
+      });
+
     }
-    
+
   }
 
   stop(){
-    clearInterval(this.interval);
+
     this.interval = null;
   }
 

@@ -8904,6 +8904,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(335);
+	__webpack_require__(337);
 
 	var nav = new _NavClass2.default();
 	var notes = new _ContentNotesClass2.default(".note", ".caller");
@@ -9337,6 +9338,7 @@
 	    var _this = _possibleConstructorReturn(this, (Starry.__proto__ || Object.getPrototypeOf(Starry)).call(this));
 
 	    _this.interval = null;
+	    _this.spawnInterval = 4000;
 	    _this.data = [];
 	    _this.density = density == undefined ? 25 : density;
 	    return _this;
@@ -9354,14 +9356,23 @@
 	    key: "start",
 	    value: function start() {
 	      var self = this;
-	      this.interval = setInterval(function () {
-	        self.spawn();
-	      }, 4000);
+
+	      animLoop(function (deltaT, now) {
+
+	        if (self.interval == null || now - self.interval >= self.spawnInterval) {
+	          self.interval = now;
+	          self.spawn();
+	        }
+
+	        if (self.interval == null) {
+	          return false;
+	        }
+	      });
 	    }
 	  }, {
 	    key: "stop",
 	    value: function stop() {
-	      clearInterval(this.interval);
+	      this.interval = null;
 	    }
 	  }, {
 	    key: "createStream",
@@ -9540,17 +9551,23 @@
 
 	      if (this.interval == null) {
 
-	        this.interval = setInterval(function () {
+	        animLoop(function (deltaT, now) {
 
-	          self.reel();
-	        }, 8000);
-	        this.reel();
+	          if (self.interval == null || now - self.interval >= 8000) {
+	            self.interval = now;
+	            self.reel();
+	          }
+
+	          if (self.interval == null) {
+	            return false;
+	          }
+	        });
 	      }
 	    }
 	  }, {
 	    key: "stop",
 	    value: function stop() {
-	      clearInterval(this.interval);
+
 	      this.interval = null;
 	    }
 	  }, {
@@ -9826,14 +9843,22 @@
 	    key: "start",
 	    value: function start() {
 	      var self = this;
-	      this.interval = setInterval(function () {
-	        self.flip();
-	      }, self.flipInterval);
+
+	      animLoop(function (deltaT, now) {
+
+	        if (self.interval == null || now - self.interval >= self.flipInterval) {
+	          self.interval = now;
+	          self.flip();
+	        }
+
+	        if (self.interval == null) {
+	          return false;
+	        }
+	      });
 	    }
 	  }, {
 	    key: "stop",
 	    value: function stop() {
-	      clearInterval(this.interval);
 	      this.interval = null;
 	    }
 	  }, {
@@ -10688,6 +10713,45 @@
 		return module;
 	}
 
+
+/***/ }),
+/* 337 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	/**
+	* From https://gist.github.com/louisremi/1114293#file_anim_loop_x.js
+	*/
+
+	// Cross browser, backward compatible solution
+	(function (window, Date) {
+	  // feature testing
+	  var raf = window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame;
+
+	  window.animLoop = function (render, element) {
+	    var running,
+	        lastFrame = +new Date();
+	    function loop(now) {
+	      if (running !== false) {
+	        raf ? raf(loop, element) :
+	        // fallback to setTimeout
+	        setTimeout(loop, 16);
+	        // Make sure to use a valid time, since:
+	        // - Chrome 10 doesn't return it at all
+	        // - setTimeout returns the actual timeout
+	        now = now && now > 1E4 ? now : +new Date();
+	        var deltaT = now - lastFrame;
+	        // do not render frame when deltaT is too high
+	        if (deltaT < 160) {
+	          running = render(deltaT, now);
+	        }
+	        lastFrame = now;
+	      }
+	    }
+	    loop();
+	  };
+	})(window, Date);
 
 /***/ })
 /******/ ]);

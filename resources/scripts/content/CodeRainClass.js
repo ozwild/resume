@@ -5,6 +5,7 @@ export default class Starry extends Eventful{
     super();
     
     this.interval = null;
+    this.spawnInterval = 4000;
     this.data = [];
     this.density = density == undefined? 25:density;
   }
@@ -14,12 +15,23 @@ export default class Starry extends Eventful{
   }
   start(){
     let self = this;
-    this.interval = setInterval(function(){
-      self.spawn();
-    },4000);
+    
+    animLoop(function( deltaT, now ) {
+
+        if(self.interval == null || (now - self.interval) >= self.spawnInterval){
+          self.interval = now;
+          self.spawn();
+        }
+
+        if(self.interval == null){
+          return false;
+        }
+
+      });
+    
   }
   stop(){
-    clearInterval(this.interval);
+    this.interval = null;
   }
   createStream(){
 
