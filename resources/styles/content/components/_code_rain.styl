@@ -4,12 +4,15 @@
   font-family $codeRainFont
   display inline-flex
   color darken($baseColor,15%)
+  pointer-events none
   .stream
     cursor default
     pointer-events none
     layer(305)
     transform rotateX(0deg) rotateY(150deg) rotateZ(180deg)
     text-orientation upright
+    -ms-writing-mode tb-rl
+    -webkit-writing-mode tb-rl
     writing-mode vertical-rl
     text-shadow: 1px 1px 16px;
     font-size: 1.1rem;
