@@ -1,0 +1,43 @@
+.backgrounds
+  fullLayer(100)
+  position fixed
+  div
+    opacity 0
+    fullLayer(105)
+    transition opacity 1.6s
+  .background-a
+    background radial-gradient(farthest-corner,transparent, $colorA)
+  .background-b
+    background radial-gradient(farthest-corner,transparent, $colorB)
+  .background-c
+    background radial-gradient(farthest-corner,transparent, $colorC)
+  .background-d
+    background radial-gradient(farthest-corner,transparent, $colorD)
+  .background-e
+    background radial-gradient(farthest-corner,transparent, $colorE)
+  .background-x
+    background radial-gradient(farthest-corner,transparent, $colorDark)
+
+body
+  &.a
+    .background-a
+      opacity 1
+  &.b
+    .background-b
+      opacity 1
+  &.c
+    .background-c
+      opacity 1
+  &.d
+    .background-d
+      opacity 1
+  &.e
+    .background-e
+      opacity 1
+  &.x
+    .background-x
+      opacity 1
+      
+body.no-js
+  .backgrounds
+    display none

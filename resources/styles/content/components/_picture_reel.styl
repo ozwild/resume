@@ -1,0 +1,38 @@
+#picture-reel
+  position absolute
+  overflow hidden
+  bottom 8.5em
+  left 0
+  width 100vw
+  height 20em
+  border-bottom 2px dashed orangered
+  font-size 1.05rem
+  @media (max-width: 640px)
+    font-size 0.65rem
+  @media (min-width: 640px)
+    @media (max-width: 960px)
+      font-size 0.85rem
+  .self-picture
+    border-top 1.2em solid gainsboro
+    border-bottom 1.8em solid gainsboro
+    border-left 0.6em solid gainsboro
+    border-right 0.6em solid gainsboro
+    min-width 13em
+    min-height 13em
+    position absolute
+    bottom 0
+    left 13em
+    z-index 350
+    background-position: center;
+    background-size: 115%;
+    transform rotateZ(-27deg) rotateX(20deg)
+    filter saturate(0.5) brightness(0.8) contrast(0.9)
+
+body
+  &.presentation
+    #picture-reel
+      display none
+
+body.no-js
+  #picture-reel
+    display none

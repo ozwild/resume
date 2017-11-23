@@ -1,0 +1,77 @@
+.header
+  position absolute
+  z-index 500
+  color $colorDark
+  font-family $headerAccentfont
+  text-rendering optimizeLegibility
+  text-shadow 1px 1px 3px hsla(0,0%,0%,0.25)
+  h1.main-title
+    display inline
+    font-family $headerMainFont
+    font-size 4em
+    margin-left 0em
+  div
+    font-size 2em
+    position absolute
+    display inline    
+
+.header.first-plane
+  font-size 1vw
+  left 3em
+  bottom 8em
+  color $colorLight
+  text-shadow 0.5vw 0.5vw 1vw hsla(0,0%,0%,0.5)
+  transition left 0.75s
+  pointer-events none
+  @media (max-width: 640px)
+    font-size 0.75rem
+  @media (min-width: 640px)
+    @media (max-width: 960px)
+      font-size 1rem
+  @media (min-width: 960px)
+    font-size 1.25rem
+  h1
+  div
+    &:first-child
+      color $colorAccent
+      transform rotate(-8deg) translate(1.7em, -0.7em)
+    &:last-child
+      transform translate(1.4em,1em)
+      span
+        display inline-block
+        &.header-flip
+          position absolute
+          line-height 0.85em
+          top -0.5em
+          
+.header.second-plane
+  z-index 2000
+  text-shadow 1px 1px 3px rgba(0, 0, 0, 0.250)
+  font-size 1.3rem
+  left 1.5em
+  top 0.5em
+  line-height 1.5em
+  cursor pointer
+  h1
+    font-size 1.8em
+  div
+    font-size 1.3em
+    cursor pointer
+    &:last-child
+      transform: translate(1.5em, -0.25em)
+
+body.no-js
+  .header
+    &.first-plane
+      left -1000px  
+    &.second-plane
+      color $colorLight
+
+body
+  &.presentation
+    .header.first-plane
+        left -1000px
+  &:not(.presentation):not(.no-js)
+    .header.second-plane
+        left -1000px 
+        

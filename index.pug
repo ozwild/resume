@@ -1,0 +1,36 @@
+extends views/layouts/_app
+
+block content
+  include views/layouts/_pictureReel
+  include views/layouts/_backgrounds
+  include views/layouts/_header
+  include views/layouts/_nav
+  
+  main
+    .note#a
+      .card
+        .card-body
+          include views/content/_about
+    .note#x
+      .card
+        .card-body
+          include views/content/_resume
+    .note#b
+      .card
+        .card-body
+          include views/content/_skills
+    .note#c
+      .card
+        .card-body
+          include views/content/_career
+    .note#e
+      .card
+        .card-body
+          include views/content/_portfolio
+    .note#d
+      .card
+        .card-body
+          include views/content/_contact
+          
+  #rain-container
+  

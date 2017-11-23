@@ -1,0 +1,57 @@
+@keyframes falling{
+  from{
+    letter-spacing -13px
+  }
+  to{
+    letter-spacing 3px
+  }
+}
+
+@keyframes jiggling{
+  10%{
+    transform rotate(0deg)
+  }
+  12%{
+    transform rotate(-12deg)
+  }
+  14%{
+    transform rotate(12deg)
+  }
+  16%{
+    transform rotate(12deg)
+  }
+  18%{
+    transform rotate(-12deg)
+  }
+  20%{
+    transform rotate(12deg)
+  }
+  22%{
+    transform rotate(0deg)
+  }
+
+}
+
+@keyframes floating{
+  0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(10px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(10px);
+	}
+}
+
+@keyframes appear{
+  70%{
+    opacity 0.3
+  }
+  100%{
+    opacity 1
+  }
+}

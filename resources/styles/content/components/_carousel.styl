@@ -1,0 +1,57 @@
+.carousel-wrapper
+  background $colorDark
+  position relative
+  .carousel-container
+    position relative
+    overflow hidden
+    width calc(100% - 7em)
+    margin 0 auto
+    height 500px
+    @media (max-width: 640px)
+      height 250px
+    @media (min-width: 640px)
+      @media (max-width: 960px)
+        height 350px
+    .item
+      position absolute
+      top 50%
+      left -60%
+      width 100%
+      transform translate(-50%,-50%)
+      transition left 750ms
+      &.active
+        left 50%
+  .control
+    height 100%
+    width 50px
+    position absolute
+    top 0
+    background $colorDark
+    cursor pointer
+    &:hover
+      background lighten($colorDark,10%)
+      &:before
+        color hsla(0,0%,100%,0.8)
+    &:before
+      position absolute
+      top 50%
+      left 50%
+      font-size 2em
+      color color hsla(0,0%,100%,0.6)
+      transform translate(-50%, -50%)
+    &.previous
+      left 0  
+      &:before
+        content "<"
+    &.next
+      right 0
+      &:before
+        content ">"
+  iframe
+    height 500px
+    @media (max-width: 640px)
+      height 250px
+    @media (min-width: 640px)
+      @media (max-width: 960px)
+        height 350px
+          

@@ -1,0 +1,42 @@
+$baseColor = #222
+$colorLight = #EAF2EF
+$colorDark = #0B0C10
+
+$colorAccent = #FF5722
+
+/*yellow-ish*/
+$colorA = #EAE151
+/*blue-ish*/
+$colorB = #0D3B66
+/*aqua-ish*/
+$colorC = #0CCE6B
+/*purple-ish*/
+$colorD = #502274
+/*green-ish*/
+$colorE = #BEEE62
+
+fAnimation(a,t){
+  animation a t ease-in-out infinite
+}
+
+layer(index){
+  z-index index
+  position absolute
+  left 0
+  top 0
+}
+
+layerBottom(index){
+  z-index index
+  position absolute
+  left 0
+  bottom 0
+}
+
+fullLayer(index){
+  layer(index)
+  height 100vh
+  max-height 100%
+  width 100vw
+  max-width 100%
+}

@@ -1,0 +1,110 @@
+
+$navBorderRadius = 0.5em;
+
+navBoxShadow($color){
+  3px 5px 15px -2px alpha($color, 0.6);
+}
+
+nav
+  z-index 1300
+  display flex
+  flex-direction row
+  position fixed
+  right 1em
+  top 1em
+  font-size 0.9rem
+  a
+    text-decoration none
+    color $colorLight
+    background $colorDark
+    line-height 2em
+    padding 10px 20px
+    position relative
+    flex 1 auto
+    display block
+    border-radius $navBorderRadius
+    margin-right $navBorderRadius
+    box-shadow navBoxShadow($colorDark)
+    transition all 0.45s
+    text-align center
+    &:not(.active):hover
+      fAnimation(jiggling, 2s)
+    &.active
+      fAnimation(floating, 6s)
+      color $colorDark !important
+      background $colorLight !important
+      z-index 1350
+      padding 10px 20px
+      transform scale(1.1)
+    &:hover
+      color $colorDark !important
+      background $colorLight !important
+    &.burger
+      min-height 1.5em
+      display none
+      span
+        position absolute
+        left 50%
+        top 50%
+        transform translate(-50%,-50%)
+        width 2em
+        &:first-child
+          top 28%
+        &:last-child
+          top 72%
+          
+body.no-js
+  nav
+    display none
+    
+body.presentation
+  nav
+    a
+      background black
+      color white
+      box-shadow navBoxShadow(black)
+
+nav
+  @media screen
+    @media (max-width: 960px)
+      flex-direction column
+      height 0
+      padding 0
+      a
+        border-radius 0
+        right -500px
+        &.burger
+          display block
+          right 0
+          padding 0.5em 2.5em
+          text-align center  
+          span
+            transition all 0.6s
+            display block
+            height 4px
+            background $colorLight
+        &:hover
+          span
+            background $colorDark
+      &.visible
+        a
+          &.active
+              animation unset
+          right 0
+          &.burger
+            background $colorDark  
+            &:hover
+              span
+                background $colorDark
+            span
+              background $colorLight
+              opacity 0
+              &:first-child,&:last-child
+                left 50%
+                top 50%
+                opacity 1
+              &:first-child
+                transform translate(-50%,-50%) rotate(45deg)
+              &:last-child
+                transform translate(-50%,-50%) rotate(-45deg)          
+              

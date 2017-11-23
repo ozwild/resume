@@ -1,0 +1,191 @@
+body
+  font-size 17px
+  background-color $colorDark
+  
+h1,h2,h3,h4,h5
+  font-family $titleFont
+  &.alt
+    font-family $textFont
+  
+body
+  line-height 1.4em
+  color $colorDark
+  font-family $textFont
+
+a
+  text-decoration none
+  color $colorAccent
+  &:hover
+    color lighten($colorAccent, 20%)
+    text-decoration underline
+
+section
+  margin-bottom 5em
+    
+ul
+  list-style-type none
+
+li
+  margin-bottom 0.75em
+    
+figcaption
+  font-size 0.9em
+  font-style italic
+  
+.background
+  &-primary
+    background-color $colorA
+    &.diluted-background
+      background-color lighten($colorA,15%)
+  &-secondary
+    background-color $colorB
+    &.diluted-background
+      background-color lighten($colorB,15%)
+  &-tertiary
+    background-color $colorC
+    &.diluted-background
+      background-color lighten($colorC,15%)
+  &-cuaternary
+    background-color $colorD
+    &.diluted-background
+      background-color lighten($colorD,15%)
+  &-quinary
+    background-color $colorE
+    &.diluted-background
+      background-color lighten($colorE,15%)
+  &-dark
+    background-color $colorDark
+    &.diluted-background
+      background-color lighten($colorDark,15%)
+  &-light
+    background-color $colorLight
+    &.diluted-background
+      background-color lighten($colorLight,15%)
+  &-accent
+    background-color $colorAccent
+    &.diluted-background
+      background-color lighten($colorAccent,15%)
+    
+.text
+  &-primary
+    color $colorA
+    &.diluted-text
+      color lighten($colorA,15%)
+  &-secondary
+    color $colorB
+    &.diluted-text
+      color lighten($colorB,15%)
+  &-tertiary
+    color $colorC
+    &.diluted-text
+      color lighten($colorC,15%)
+  &-cuaternary
+    color $colorD
+    &.diluted-text
+      color lighten($colorD,15%)
+  &-quinary
+    color $colorE
+    &.diluted-text
+      color lighten($colorE,15%)
+  &-dark
+    color $colorDark
+    &.diluted-text
+      color lighten($colorDark,15%)
+  &-light
+    color $colorLight
+    &.diluted-text
+      color lighten($colorLight,15%)
+  &-accent
+    color $colorAccent
+    &.diluted-text
+      color lighten($colorAccent,15%)
+.mb-1
+  margin-bottom 1em
+.mb-2
+  margin-bottom 2em
+.mb-3
+  margin-bottom 3em
+.mb-4
+  margin-bottom 4em
+.mb-5
+  margin-bottom 5em
+  
+  
+.text-center
+  text-align center
+
+.text-end
+  text-align end
+  
+.text-middle
+  vertical-align middle
+
+.bordered
+  border 1px solid rgba(0,0,0,0.125)
+
+.padded
+  padding 0.5em
+  
+.no-padding
+  padding 0
+  
+.no-margin
+  margin 0
+
+  
+.columns
+  box-sizing border-box
+  display flex
+  flex-direction row
+  .column
+    flex 1
+  &.padded
+    padding 0
+    .column
+      padding 0.5em
+  &.open
+    .column
+      margin 0 0.5em
+    
+.rows
+  box-sizing border-box
+  display flex
+  flex-direction column
+  .row
+    flex 1
+  &.padded
+    padding 0
+    .row
+      padding 0.5em
+  &.open
+    .row
+      margin 0.5em 0
+    
+.card
+  padding 2em
+  position relative
+  display flex
+  flex-direction column
+  min-width 0
+  word-wrap break-word
+  background-color #fff
+  background-clip border-box
+  border 1px solid rgba(0,0,0,0.125)
+  border-radius 0.25rem
+  .card-body
+    flex 1 1 auto
+    padding 1.25rem
+    
+.box
+  padding 2em
+  position relative
+  margin 0.25em
+  &.compact
+    padding 0.75 em
+    margin 0
+  &.no-padding
+    padding 0
+  
+  
+  
+    

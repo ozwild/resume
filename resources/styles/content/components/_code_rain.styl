@@ -1,0 +1,31 @@
+#rain-container
+  fullLayer(300)
+  overflow hidden
+  font-family $codeRainFont
+  display inline-flex
+  color darken($baseColor,15%)
+  .stream
+    cursor default
+    pointer-events none
+    layer(305)
+    transform rotateX(0deg) rotateY(150deg) rotateZ(180deg)
+    text-orientation upright
+    writing-mode vertical-rl
+    text-shadow: 1px 1px 16px;
+    font-size: 1.1rem;
+    transition opacity 3s ease-out
+    span
+      flex 1 auto
+    &::first-letter
+      z-index 310
+      font-size 21px
+      color $colorAccent
+      text-shadow 1px 1px 16px
+
+body.presentation
+  #rain-container
+    filter blur(3px)
+    
+body.no-js
+  #rain-container
+    display none
