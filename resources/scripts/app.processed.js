@@ -8911,7 +8911,7 @@
 	var rain = new _CodeRainClass2.default();
 	var reel = new _PictureReel2.default();
 	var carousel = new _Carousel2.default('.carousel', '500px');
-	var headerFlip = new _TextFlipper2.default('.header-flip', ['Software Development', 'Business Analysis', 'Workforce Management', 'Task Automation', 'Continuous Improvement', 'Creativity Unleashed', 'Super Cool', 'Legen... dary']);
+	var headerFlip = new _TextFlipper2.default('.header-flip', ['Software Development', 'Business Analysis', 'Workforce Management', 'Task Automation', 'Continuous Improvement', 'Creative Tinker']);
 
 	window.tempcarousel = carousel;
 	window.tempreel = reel;

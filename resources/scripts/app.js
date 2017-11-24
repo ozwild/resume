@@ -19,9 +19,7 @@ const headerFlip = new TextFlipper('.header-flip',[
   'Workforce Management',
   'Task Automation',
   'Continuous Improvement',
-  'Creativity Unleashed',
-  'Super Cool',
-  'Legen... dary'
+  'Creative Tinker'
 ]);
 
 window.tempcarousel = carousel;
