@@ -1,18 +1,26 @@
-# Resume
+# Foreword
 
-Coded using CodePen's online project editor. 
+Hello there! I'm Oscar (Ozwild) and this is my personal online resume, well the code that is.
+It's purpose, apart from the obvious, was to get a better grasp on JS templating and css preprocessors.
+To this end I started this as a CodePen project using Pug and Stylus but somewhere along the way I decided it was worth to have it available as a repository on github.
 
-Written with Pug and Stylus. Used Babel to handle js conversions.
+This is by no means a proper formal resume, this is just a way to show off, to showcase creativity and expertise. Hence, you'll be able to notice the lack of consideration for cpu/memory usage thereof. It's ok, it's just a concept resume of sorts.
 
-# Features
+So, without any further ado. I give to you.... 
+
+**The Resume.**
+
+# On with business
+
+## Features
  * Static single page application
- * Requires JS to run major animations
- * Fallbacks gracefully when no JS is present
+ * Requires Javascript to run animations
+ * Fallbacks gracefully when Javascript is disabled
 
-# See it live
-http://aozidesu.com/resume/
+## See it live
+http://oscarpalencia.me
 
-# Usage
+## Usage
 
 ### Before starting:
 * Resume requires Pug, Stylus and Webpack .
