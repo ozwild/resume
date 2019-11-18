@@ -18,7 +18,7 @@ So, without any further ado. I give to you....
  * Fallbacks gracefully when Javascript is disabled
 
 ## See it live
-http://oscarpalencia.me
+https://ozwild.github.io
 
 ## Usage
 
@@ -50,9 +50,3 @@ I know this might be troublesome but the whole idea is to get some hands-on prac
  Aaand... there it is. Your very own resume project fresh out of the oven.
  You could alternatively just modify the contents of the index.html file provided but where's the fun in that?
  
-
-# Notes
- * Uses jQuery. It's required from CDN. Could have done it without it but I got lazy
- * Velocity.js (http://velocityjs.org/) is included within the source files
-
-Look me up at CodePen https://codepen.io/ozwild/ 
