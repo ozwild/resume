@@ -1,12 +1,12 @@
-require("./content/Velocity")
-require("./content/Loop")
+require("./js/Velocity")
+require("./js/Loop")
 
-import Nav from "./content/NavClass";
-import Notes from "./content/ContentNotesClass";
-import CodeRain from "./content/CodeRainClass";
-import PictureReel from "./content/PictureReel";
-import Carousel from "./content/Carousel";
-import TextFlipper from "./content/TextFlipper";
+import Nav from "./js/NavClass";
+import Notes from "./js/ContentNotesClass";
+import CodeRain from "./js/CodeRainClass";
+import PictureReel from "./js/PictureReel";
+import Carousel from "./js/Carousel";
+import TextFlipper from "./js/TextFlipper";
 
 const nav = new Nav();
 const notes = new Notes(".note", ".caller");
@@ -16,10 +16,9 @@ const carousel = new Carousel('.carousel','500px');
 const headerFlip = new TextFlipper('.header-flip',[
   'Software Development',
   'Business Analysis',
-  'Workforce Management',
-  'Task Automation',
-  'Continuous Improvement',
-  'Creative Tinker'
+  'Automation',
+  'Improvement',
+  'Creative Thinking'
 ]);
 
 window.tempcarousel = carousel;
